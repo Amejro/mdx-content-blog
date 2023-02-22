@@ -1,8 +1,21 @@
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./*"]
+//     }
+//   }
+// }
+
+
 {
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    
     }
-  }
+  },
+  // "include": [".contentlayer/generated"],
+  // "exclude": []                                          
 }
