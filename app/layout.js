@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
   )
 
   const footer =(
-    <footer className='border-t border-slate-500 mt-6 py-6 text-center text-slate-400'>
+    <footer className='border-t w-screen border-slate-500 mt-6 py-6 text-center text-slate-400'>
       <div>
         <br/>
         <h3>develop by Eli</h3>
