@@ -1,6 +1,6 @@
 
 import { allPosts } from "contentlayer/generated"
-import Mdx from "component/mdx";
+import Mdx from "components/mdx";
 export async function generateStaticParams(){
     return allPosts.map((post)=>({
         slug:post.slug

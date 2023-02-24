@@ -15,7 +15,7 @@ export type Post = {
   type: 'Post'
   /** The title of the post */
   title: string
-  /** The title of the post */
+  /** The subtitle of the post */
   subtitle: string
   /** The date of the post */
   date: IsoDateTimeString
@@ -23,6 +23,7 @@ export type Post = {
   body: MDX
   slug: string
   url: string
+  image: string
 }  
 
 /** Nested types */

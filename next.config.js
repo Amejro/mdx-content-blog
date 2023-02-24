@@ -3,6 +3,17 @@ const { withContentlayer } = require ('next-contentlayer')
 
 
 const nextConfig = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    // Twitter Profile Picture
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'unsplash.com',
+        pathname: '/**',
+      },
+    ],
+  },
   experimental: {
     appDir: true,
   },

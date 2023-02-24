@@ -12,7 +12,7 @@ var Post = defineDocumentType(() => ({
     },
     subtitle: {
       type: "string",
-      description: "The title of the post",
+      description: "The subtitle of the post",
       required: true
     },
     date: {
@@ -29,6 +29,10 @@ var Post = defineDocumentType(() => ({
     url: {
       type: "string",
       resolve: (post) => `/blog/${post._raw.flattenedPath}`
+    },
+    image: {
+      type: "string",
+      resolve: (post) => `/${post._raw.flattenedPath}.jpg`
     }
   }
 }));
@@ -40,4 +44,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-RN5KEW3C.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-RFIDQBXS.mjs.map

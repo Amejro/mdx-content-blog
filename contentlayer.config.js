@@ -12,7 +12,7 @@ export const Post = defineDocumentType(() => ({
     },
     subtitle: {
         type: 'string',
-        description: 'The title of the post',
+        description: 'The subtitle of the post',
         required: true,
       },
     date: {
@@ -20,6 +20,7 @@ export const Post = defineDocumentType(() => ({
       description: 'The date of the post',
       required: true,
     },
+    
   },
   computedFields: {
     slug:{
@@ -29,6 +30,10 @@ export const Post = defineDocumentType(() => ({
     url: {
       type: 'string',
       resolve: (post) => `/blog/${post._raw.flattenedPath}`,
+    },
+    image: {
+      type: 'string',
+      resolve: (post) => `/${post._raw.flattenedPath}`+".jpg",
     },
   },
 }))
