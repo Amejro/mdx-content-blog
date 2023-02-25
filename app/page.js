@@ -9,7 +9,13 @@ export default function Home() {
   
  
   return (
-    <div className='grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-2'>
+    <>
+    <header className='flex items-center justify-center w-screen h-[500px] bg-slate-200'>
+      <div>
+      <h1>I am the header</h1>
+      </div>
+    </header>
+    <div className='mx-auto max-w-2xl px-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 md:grid-cols-2 mt-5'>
       {allPosts.map((post, index)=>(
         
         <div className='rounded-lg bg-gray-200'>
@@ -29,5 +35,6 @@ export default function Home() {
       ))}
      
     </div>
+  </>
   )
 }

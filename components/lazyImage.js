@@ -9,9 +9,9 @@ function cn(...classes){
 function lazyImage({img}){
     const [isLoading, setLoading] =  useState(true)
     return(
-     <div>
+     <div className="aspect-w-3 aspect-h-2">
           <Image 
-          className={cn('rounded-t-lg w-fulls object-cover duration-700 ease-in-out',
+          className={cn('rounded-t-lg  duration-700 ease-in-out',
           isLoading
           ? 'grayscale blur-2xl scale-110'
           : 'grayscale-0 blur-0 scale-100'
@@ -19,8 +19,7 @@ function lazyImage({img}){
           onLoadingComplete={()=>setLoading(false)}
           alt="leeerob"
            src={img}
-            width={500}
-            height={500}
+           fill
             />
           </div>
     )
