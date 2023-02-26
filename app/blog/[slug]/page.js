@@ -65,9 +65,9 @@ export async function generateMetadata({params}) {
       <h1 className='text-[44px] font-extrabold text-[#2F1C6A] '>Amedzro E.</h1>
     </div>
    </div>
-   <div className='mb-5'>Amedzro is a content editor with years of experience in IT writing,
-    marketing, and Linux system administration. His goal is to encourage readers to establish 
-    an impactful online presence. He also really loves dogs, guitars, and everything related 
+   <div className='mb-5'>Amedzro is a content editor with years of experience in IT writing.
+    His goal is to encourage readers to establish an impactful online presence.
+     He also really loves women, and everything related 
     to space.
     </div>
    <div>More from Amedzro</div>

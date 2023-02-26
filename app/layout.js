@@ -74,9 +74,7 @@ export default function RootLayout({ children }) {
       <div className='border-b  border-slate-500  py-6'>
       <address>
       contact:<br/>
-      TechOnTheNet.com<br/>
-      123 Somewhere St.<br/>
-      City, State <br/>
+      Accra, Ghana <br/>
       <a href="mailto:hansonnewton@gmail.com">hansonnewton@gmail.com</a> <br/>
       <a href="tel:+233240809067">(+233) 240809067</a>
       </address>
