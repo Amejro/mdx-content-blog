@@ -13,7 +13,7 @@ export async function generateStaticParams(){
 }
 
 export async function generateMetadata({params}) {
-    const post = allPosts.find((post)=>post.slug === params.slug)
+    const post = allPosts.find((post)=>post.slug === params?.slug)
     if (!post) {
       return;
     }
