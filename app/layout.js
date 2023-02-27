@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import './globals.css'
 import Link from 'next/link'
-import OmniBlog from '../public/omniBlog.svg'
+import OmniBlog from '/public/omniBlog.svg'
 
 export const metadata = {
   title: {
