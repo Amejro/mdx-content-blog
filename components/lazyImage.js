@@ -9,7 +9,7 @@ function cn(...classes){
 function lazyImage({img}){
     const [isLoading, setLoading] =  useState(true)
     return(
-     <div className="aspect-w-3 aspect-h-2">
+     <div className="aspect-w-2 aspect-h-1">
           <Image 
           className={cn('rounded-t-lg  duration-700 ease-in-out',
           isLoading

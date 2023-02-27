@@ -4,6 +4,22 @@ subtitle: "Implementing Pokemon-like combat mechanics in PICO-8."
 date: "2020-12-22"
 ---
 
+- [Concept](#concept)
+- [Gameplay](#gameplay)
+  - [Core Mechanics](#core-mechanics)
+  - [Magic](#magic)
+  - [Items](#items)
+  - [Enemy](#enemy)
+- [Event Sequence](#event-sequence)
+  - [Sequence](#sequence)
+  - [Damage Event](#damage-event)
+  - [Sequence Control](#sequence-control)
+- [Items and Magic](#items-and-magic)
+- [Animation](#animation)
+- [Tools](#tools)
+- [Summary](#summary)
+
+
 In a [previous post](./retro-games-with-pico-8) I talked about how making retro 8-bit games is a great way for fledgling developers to learn new things whilst expanding their portfolio.
 
 I recently gave it a go myself, making a small RPG combat game called "Wolfhunter".

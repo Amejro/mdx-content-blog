@@ -3,7 +3,7 @@ import { allPosts } from "contentlayer/generated"
 import Mdx from "components/mdx";
 import Image from "next/image";
 import Next from '/public/qrcode.jpg'
-
+import Related from '/components/related'
 
 export async function generateStaticParams(){
     return allPosts.map((post)=>({
@@ -78,6 +78,7 @@ export async function generateMetadata({params}) {
 async function page({params}){
     const post = allPosts?.find((post)=>post?.slug === params?.slug)
     return (
+      <>
         <div className="mx-auto max-w-2xl px-6">
          <h1 className="text-[#2F1C6A] mt-5 text-3xl leading-[120%] font-extrabold">{post.title}</h1>
             <div className="aspect-w-3 aspect-h-2 my-5">
@@ -93,6 +94,9 @@ async function page({params}){
 
           {authorCard}
         </div>
+
+        <Related allPosts={allPosts}/>
+        </>
       )
 }
 

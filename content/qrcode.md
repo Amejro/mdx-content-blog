@@ -4,6 +4,17 @@ subtitle: "Build a serverless 'hello-world' QR code app with Python and AWS."
 date: "2021-08-14"
 ---
 
+- [What is a QR Code?](#what-is-a-qr-code)
+- [Architecture](#architecture)
+  - [Overall Stack](#overall-stack)
+- [Implementation](#implementation)
+  - [Generating a `tag` and a URL](#generating-a-tag-and-a-url)
+  - [Generating the QR code image](#generating-the-qr-code-image)
+  - [Showing the QR image to the user](#showing-the-qr-image-to-the-user)
+  - [Persisting the `tag` and the message](#persisting-the-tag-and-the-message)
+  - [Scanning the QR image to load the content](#scanning-the-qr-image-to-load-the-content)
+- [Wrap Up](#wrap-up)
+
 Ever since the pandemic started, I've noticed QR codes creeping into my daily life. Venue check-ins, digital menus at restaurants, and online payments.
 
 I thought it'd be fun to explore the technology a little bit, so I've built a micro web-app that lets you save messages and view them later using a QR code. Sort of a "Hello World" QR code project.

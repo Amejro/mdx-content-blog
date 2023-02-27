@@ -4,6 +4,18 @@ subtitle: "I used GPT-3 to generate poetry and other creative content."
 date: "2021-08-27"
 ---
 
+- [What is GPT-3?](#what-is-gpt-3)
+- [💡 Method](#-method)
+- [🧪 Results](#-results)
+  - [✍ Short poem](#-short-poem)
+  - [✍ Short poem with theme](#-short-poem-with-theme)
+  - [✍ Short poem with 2x themes](#-short-poem-with-2x-themes)
+  - [✍ Children's Story (Rhyming Verse)](#-childrens-story-rhyming-verse)
+  - [✍ Fantasy Fiction](#-fantasy-fiction)
+  - [✍ Hacker Rap](#-hacker-rap)
+- [Wrap Up](#wrap-up)
+
+
 I was recently granted access to the [OpenAI GPT-3 Beta](https://beta.openai.com/), a very powerful language model that can be used to do all sorts of magic like chat bot generation, article summary, and a [lot more cool stuff](https://beta.openai.com/examples).
 
 But the application that really excited me was creative writing (stuff like SEO generation is cool and all, but a also a bit dry for my taste).

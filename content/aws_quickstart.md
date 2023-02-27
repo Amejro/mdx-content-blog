@@ -4,6 +4,20 @@ subtitle: "Create an AWS account and set up CLI/SDK access."
 date: "2020-12-27"
 ---
 
+- [Getting Started](#getting-started)
+  - [Create an account](#create-an-account)
+  - [Install the CLI](#install-the-cli)
+  - [Create an IAM user](#create-an-iam-user)
+  - [Configure the CLI](#configure-the-cli)
+  - [Configuration files](#configuration-files)
+  - [Test the CLI!](#test-the-cli)
+  - [AWS SDK](#aws-sdk)
+  - [That's it!](#thats-it)
+- [Why AWS?](#why-aws)
+- [Why Serverless?](#why-serverless)
+- [Continue Learning](#continue-learning)
+
+
 "Cloud computing" plays a vital role in the creation of software products and services. It's also one of the most highly sought-after skills in the tech industry.
 
 In fact, most of the projects on this site will require cloud interaction of some sort—particularly with AWS's serverless products.
