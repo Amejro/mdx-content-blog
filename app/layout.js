@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import './globals.css'
 import Link from 'next/link'
-import Onmiblog from '../public/omniBlog.svg'
+import OmniBlog from '../public/omniBlog.svg'
 
 export const metadata = {
   title: {
@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
     <nav className='sticky flex flex-row justify-between items-center top-0 z-10 w-screen  bg-slate-200 px-6 py-3'>
       <Link href={'/'} >
        <Image className=''
-       src={Onmiblog}
+       src={OmniBlog}
        width={150}
        height={150}
        alt='OmniBlog'
