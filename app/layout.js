@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import './globals.css'
 import Link from 'next/link'
-import OmniBlog from '/public/omniBlog.svg'
+import OmniBlog from '/public/omniblog.svg'
 
 export const metadata = {
   title: {
@@ -55,8 +55,8 @@ export default function RootLayout({ children }) {
       <Link href={'/'} >
        <Image className=''
        src={OmniBlog}
-       width={150}
-       height={150}
+       width={100}
+       height={100}
        alt='OmniBlog'
        />
       </Link>
