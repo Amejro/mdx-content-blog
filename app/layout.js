@@ -1,19 +1,19 @@
 import Image from 'next/image'
 import './globals.css'
 import Link from 'next/link'
-import OmniBlog from '/public/omniblog.svg'
+import VerbVibes from '/public/verbVibes.svg'
 
 export const metadata = {
   title: {
-    default: 'OmniBlog',
-    template: '%s | OmniBlog',
+    default: 'VerbVibes',
+    template: '%s | VerbVibes',
   },
   description: 'Developer, writer, and creator.',
   openGraph: {
-    title: 'OmniBlog',
+    title: 'VerbVibes',
     description: 'Developer, writer, and creator.',
     url: 'https://leerob.io',
-    siteName: 'OmniBlog',
+    siteName: 'VerbVibes',
     images: [
       {
         url: 'https://leerob.io/og.jpg',
@@ -36,7 +36,7 @@ export const metadata = {
     },
   },
   twitter: {
-    title: 'OmniBlog',
+    title: 'VerbVibes',
     card: 'summary_large_image',
   },
   icons: {
@@ -52,13 +52,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const nav =(
     <nav className='sticky flex flex-row justify-between items-center top-0 z-10 w-screen  bg-slate-200 px-6 py-3'>
-      <Link href={'/'} >
-       <Image className=''
-       src={OmniBlog}
-       width={100}
-       height={100}
-       alt='OmniBlog'
+      <Link href={'/'} className='flex items-center'>
+       <Image className='h-7 w-7 sm:h-6'
+       src={VerbVibes}
+       width='auto'
+       height='auto'
+       alt='VerbVibes'
        />
+       <span className='hidden sm:block text-3xl text-[#2F1C6A] font-extrabold'>VerbVibes</span>
       </Link>
       <div>
       <Link href={'/about'}>
@@ -95,7 +96,17 @@ export default function RootLayout({ children }) {
         </div>
         
         <h3>Develop by Eli</h3>
-        &copy; 2023 OmniBlog
+        <div className='flex justify-center'>
+        &copy; 2023 
+        <Image className='ml-2'
+        src={VerbVibes}
+        width={20}
+        height={20}
+        alt='VerbVibes'
+       />
+        <span>VerbVibes</span>
+        </div>
+       
       </div>
     </footer>
   )

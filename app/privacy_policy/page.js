@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Privacy Policy',
-  description: 'At Omniblog, we take the privacy of our users seriously. This privacy policy outlines the information we collect and how we use it.',
+  description: 'At VerbVibes, we take the privacy of our users seriously. This privacy policy outlines the information we collect and how we use it.',
 };
 export default function page() {
   
@@ -9,7 +9,7 @@ export default function page() {
       <header className=' w-screen py-[85px] bg-slate-200'>
         <h1 className="text-4xl font-bold text-center py-10">Privacy Policy</h1>
       <p className='mx-auto max-w-2xl px-[15px] text-center'>
-      At Omniblog, we take the privacy of our users seriously.
+      At VerbVibes, we take the privacy of our users seriously.
        This privacy policy outlines the information we collect 
        and how we use it.
       </p>

@@ -15,7 +15,7 @@ function related({allPosts}) {
           <LazyImage img={post?.image}/>
          <div className='px-3'> 
         <h1 className="text-[#2F1C6A] mt-5 text-l leading-[120%] font-bold">{post?.title}</h1>
-        <h3 className="">{post?.subtitle}</h3>
+        <h3 className="hidden sm:block">{post?.subtitle}</h3>
         <p className='text-sm pb-3 font-extrabold text-[#2F1C6A]'>{post?.date}</p>
         </div>
         </Link>
