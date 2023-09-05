@@ -12,9 +12,9 @@ export const metadata = {
 };
 
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/api/notion");
-  // const data = await res.json();
-  console.log(await res);
+  const res = await fetch("http://localhost:3000/api");
+  const data = await res.json();
+  console.log(await data.response.results[1].properties.content);
 
   return (
     <>
