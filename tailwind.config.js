@@ -1,4 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+// module.exports = konstaConfig({
+//   content: [
+//     './pages/**/*.{js,ts,jsx,tsx}',
+//     './components/**/*.{js,ts,jsx,tsx}',
+//   ],
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
