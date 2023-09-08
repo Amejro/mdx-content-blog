@@ -7,13 +7,13 @@ export default async function sitemap() {
   const allPosts = await data.response.results;
 
   const posts = allPosts.map((post) => ({
-    url: `${HOST_URL}/blog/${post.properties.slug.rich_text[0].plain_text}`,
+    url: `https://amejro.xyz/blog/${post.properties.slug.rich_text[0].plain_text}`,
     lastModified: post.publishedAt,
   }));
 
   const routes = ["", "/about", "/terms-of-service", "/privacy_policy"].map(
     (route) => ({
-      url: `${HOST_URL}/${route}`,
+      url: `https://amejro.xyz${route}`,
       lastModified: new Date().toISOString(),
     })
   );

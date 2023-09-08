@@ -1,14 +1,14 @@
 export const metadata = {
   title: "About",
   description:
-    "At Omniblog, we believe that knowledge is power, and we strive to empower our readers with the latest insights and trends in a wide range of topics.",
+    "At Amejro, we believe that knowledge is power, and we strive to empower our readers with the latest insights and trends in a wide range of topics.",
 };
 function page() {
   return (
     <>
       <header className=" w-screen py-[85px] bg-slate-200">
         <p className="mx-auto max-w-2xl px-[15px]">
-          Welcome to Omniblog, your ultimate destination for all things
+          Welcome to Amejro, your ultimate destination for all things
           interesting! We are a team of passionate writers and researchers who
           are dedicated to bringing you the best and most engaging content from
           across the web.
@@ -22,7 +22,7 @@ function page() {
               Empowering You With A Wide Range Of Topics
             </h1>
             <p>
-              At Omniblog, we believe that knowledge is power, and we strive to
+              At Amejro, we believe that knowledge is power, and we strive to
               empower our readers with the latest insights and trends in a wide
               range of topics. Our website covers everything from the latest
               news and trends to insightful opinions and thought-provoking
@@ -60,10 +60,10 @@ function page() {
           <div className=" pb-[20px] px-[15px]">
             <p>
               So whether you&apos;re a casual reader or a die-hard enthusiast,
-              there&apos;s something for everyone on Omniblog. We invite you to
+              there&apos;s something for everyone on Amejro. We invite you to
               join our community of readers and explore the world of knowledge
-              and discovery with us. Thank you for choosing Omniblog, and we
-              look forward to sharing our passion with you!
+              and discovery with us. Thank you for choosing Amejro, and we look
+              forward to sharing our passion with you!
             </p>
           </div>
         </div>
