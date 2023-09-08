@@ -1,103 +1,100 @@
-
-import { allPosts } from "contentlayer/generated"
-import Mdx from "components/mdx";
 import Image from "next/image";
-import Next from '/public/qrcode.jpg'
-import Related from '/components/related'
 
-export async function generateStaticParams(){
-    return allPosts.map((post)=>({
-        slug:post.slug
-    } ))
-   
-}
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+const { END_POINT, HOST_URL } = process.env;
+export async function generateMetadata({ params }) {
+  const result = await fetch(`${END_POINT}`).then((res) => res.json());
 
-export async function generateMetadata({params}) {
-    const post = allPosts.find((post)=>post.slug === params.slug)
-    if (!post) {
-      return;
-    }
-    const {
-        title,
-        subtitle: description, 
-        date:publishedTime
-    } = post
+  const posts = await result.response.results;
+  const blog_post = await posts?.find(
+    (post) => post.properties.slug.rich_text[0].plain_text === params?.slug
+  );
+
+  const { title, description, image, slug, category } = blog_post?.properties;
+
   return {
-    title,
-    description,
+    title: title.rich_text[0]?.plain_text,
+    description: description.rich_text[0]?.plain_text,
+    category: category.select?.name,
     openGraph: {
-      title,
-      description,
-      type: 'article',
-      publishedTime,
-      // url: `https://leerob.io/blog/${slug}`,
+      title: title.rich_text[0]?.plain_text,
+      description: description.rich_text[0]?.plain_text,
+      url: `${HOST_URL}/blog/${slug.rich_text[0].plain_text}`,
+      siteName: "Amejro",
+      // publishedTime: "2023-01-01T00:00:00.000Z",
+      authors: ["Amedzro Emmanuel"],
       images: [
         {
-          // url: ogImage,
+          url: image.files[0]?.file.url,
+          width: 800,
+          height: 600,
+        },
+        {
+          url: image.files[0]?.file.url,
+          width: 1800,
+          height: 1600,
+          alt: "My custom alt",
+        },
+      ],
+      locale: "en_US",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title.rich_text[0]?.plain_text,
+      description: description.rich_text[0]?.plain_text,
+      images: [
+        {
+          url: image.files[0]?.file.url,
+          width: 800,
+          height: 600,
+        },
+        {
+          url: image.files[0]?.file.url,
+          width: 1800,
+          height: 1600,
+          alt: "My custom alt",
         },
       ],
     },
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      // images: [ogImage],
-    },
   };
-  }
-
-  const authorCard = (
-    // 
-    <div className='text-center md:text-start mx-auto mt-10 max-w-2xl px-6  bg-[#FAFBFF] rounded-[20px] p-[50px]'>
-   <div className='mb-5 md:flex md:flex-row md:items-center md:gap-4 '>
-    <div className='grid mb-2'>
-    <Image className=' w-[100px] h-[100px] rounded-full justify-self-center'
-    src={Next}
-    alt='avater'
-    height='auto'
-    width='auto'
-    />
-    </div> 
-   
-    
-    <div>
-      <h3 className='text-[16px] tracking-[2px] font-extrabold text-[#2F1C6A]'>The author</h3>
-      <h1 className='text-[44px] font-extrabold text-[#2F1C6A] '>Amedzro E.</h1>
-    </div>
-   </div>
-   <div className='mb-5'>Amedzro is a content editor with years of experience in IT writing.
-    His goal is to encourage readers to establish an impactful online presence.
-     He also really loves women, and everything related 
-    to space.
-    </div>
-   <div>More from Amedzro</div>
-    </div>
-  )
-
-
-async function page({params}){
-    const post = allPosts?.find((post)=>post?.slug === params?.slug)
-    return (
-      <>
-        <div className="mx-auto max-w-2xl px-6">
-         <h1 className="text-[#2F1C6A] mt-5 text-3xl leading-[120%] font-extrabold">{post.title}</h1>
-            <div className="aspect-w-3 aspect-h-2 my-5">
-            <Image className="rounded-lg"
-             alt="leeerob"
-             src={post.image}
-             fill
-            />
-            </div>
-            
-            <h3>{post?.subtitle}</h3>
-            <Mdx code={post.body.code}/>
-
-          {authorCard}
-        </div>
-
-        <Related allPosts={allPosts}/>
-        </>
-      )
 }
 
-export default page
+async function page({ params }) {
+  const result = await fetch(`${END_POINT}`).then((res) => res.json());
+
+  const posts = await result.response.results;
+  const blog_post = await posts?.find(
+    (post) => post.properties.slug.rich_text[0].plain_text === params?.slug
+  );
+
+  return (
+    <>
+      <div className="mx-auto max-w-2xl px-6">
+        {/* <h1 className="text-[#2F1C6A] mt-5 text-3xl leading-[120%] font-extrabold">{post.title}</h1> */}
+        <div className="aspect-w-3 aspect-h-2 my-5">
+          <img
+            className="rounded-lg"
+            alt={blog_post.properties.image.files[0]?.name}
+            src={blog_post.properties.image.files[0]?.file.url}
+            // fill
+          />
+        </div>
+
+        {/* <h3>{post?.subtitle}</h3> */}
+        <article
+          className="prose prose-stone prose-heading:text-[#2F1C6A] prose-p:text-[#36344D]
+    prose-p:font-[400px] prose-a:text-[#673DE6] prose-a:no-underline hover:prose-a:underline
+    "
+        >
+          <ReactMarkdown>
+            {blog_post?.properties.content.rich_text[0].plain_text}
+          </ReactMarkdown>
+        </article>
+      </div>
+      {/* <Related allPosts={allPosts}/> */}
+    </>
+  );
+}
+
+export default page;

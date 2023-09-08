@@ -1,24 +1,13 @@
-import styles from "./page.module.css";
-
+import CategoryCard from "app/components/cards/CategoryCard";
+import HeroCard from "app/components/cards/HeroCard";
+import ListCard from "app/components/cards/ListCard";
 import Link from "next/link";
-import Image from "next/image";
-import ListCard from "./components/cards/ListCard";
-import CategoryCard from "./components/cards/CategoryCard";
-import HeroCard from "./components/cards/HeroCard";
+
 const { END_POINT } = process.env;
-export const metadata = {
-  description: "Read more.",
-};
 
-export default async function Home() {
-  // ..............................All Posts.....................
-  const res = await fetch(`${END_POINT}`, {
-    next: { cache: "no-store" },
-  });
-  const data = await res.json();
-  const posts = await data.response.results;
-
+async function page({ params }) {
   // ................................Latest.....................
+
   const latestRes = await fetch(`${END_POINT}/latest`, {
     next: { cache: "no-store" },
   });
@@ -42,6 +31,10 @@ export default async function Home() {
   const oldpostsdata = await oldpostsRes.json();
   const oldPosts = await oldpostsdata.response.results;
 
+  // ...............................------................................
+  const cat = await fetch(`${END_POINT}/category/${params.slug}`, {
+    next: { cache: "no-store" },
+  });
   return (
     <div className="h-full">
       <main className=" grid grid-cols-12 max-w-[1140px] lg:mx-auto gap-x-[32px] lg:gap-[32px]  ">
@@ -50,7 +43,9 @@ export default async function Home() {
             {/* 1 */}
             <div className="flex justify-between  items-center min-h-[72px] col-span-12 bg-[#fff] lg:bg-[#f6f8fc] px-4">
               <div className="flex flex-col">
-                <h1 className="mb-[8px] text-xl font-semibold"> Discover</h1>
+                <h1 className="mb-[8px] text-xl font-semibold">
+                  {params.slug} Discoveries
+                </h1>
 
                 <div>Date</div>
               </div>
@@ -110,20 +105,9 @@ export default async function Home() {
             </div>
           </section>
         </div>
-        <div className="flex flex-col items-center relative w-full col-span-12">
-          <section className="grid lg:grid-cols-12 w-full gap-x-[16px] lg:gap-[16px]">
-            <div className="lg:col-span-4">
-              <CategoryCard />
-            </div>
-            <div className="lg:col-span-4">
-              <CategoryCard />
-            </div>
-            <div className="lg:col-span-4">
-              <CategoryCard />
-            </div>
-          </section>
-        </div>
       </main>
     </div>
   );
 }
+
+export default page;

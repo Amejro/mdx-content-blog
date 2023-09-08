@@ -11,10 +11,26 @@ export async function GET(req, res) {
   const response = await notion.databases.query({
     database_id: NOTION_DB,
     filter: {
-      property: "Status",
-      select: {
-        equals: "Live",
-      },
+      and: [
+        {
+          property: "Status",
+          select: {
+            equals: "Live",
+          },
+        },
+        {
+          property: "latest",
+          checkbox: {
+            equals: false,
+          },
+        },
+        {
+          property: "child",
+          checkbox: {
+            equals: false,
+          },
+        },
+      ],
     },
   });
 

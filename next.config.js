@@ -1,4 +1,3 @@
-const { withContentlayer } = require("next-contentlayer");
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
@@ -9,13 +8,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "images.unsplash.com",
+        hostname: "https://prod-files-secure.s3.us-west-2.amazonaws.com",
         pathname: "/**",
       },
     ],
   },
-  experimental: {
-    appDir: true,
-  },
 };
 
-module.exports = withContentlayer(nextConfig);
+module.exports = nextConfig;

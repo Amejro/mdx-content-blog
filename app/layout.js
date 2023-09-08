@@ -2,30 +2,30 @@ import Image from "next/image";
 import "./globals.css";
 import Link from "next/link";
 import VerbVibes from "/public/verbVibes.svg";
-import NavBar from "components/NavBar";
-import Footer from "components/Footer";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: {
-    default: "VerbVibes",
-    template: "%s | VerbVibes",
+    default: "Amejro",
+    template: "%s | Amejro",
   },
   description: "Developer, writer, and creator.",
-  openGraph: {
-    title: "VerbVibes",
-    description: "Developer, writer, and creator.",
-    url: "https://leerob.io",
-    siteName: "VerbVibes",
-    images: [
-      {
-        url: "https://leerob.io/og.jpg",
-        width: 1920,
-        height: 1080,
-      },
-    ],
-    locale: "en-US",
-    type: "website",
-  },
+  // openGraph: {
+  //   title: "Amejro",
+  //   description: "Developer, writer, and creator.",
+  //   url: "http://localhost:3000/",
+  //   siteName: "Amejro",
+  //   images: [
+  //     {
+  //       url: "https://leerob.io/og.jpg",
+  //       width: 1920,
+  //       height: 1080,
+  //     },
+  //   ],
+  //   locale: "en-US",
+  //   type: "website",
+  // },
   robots: {
     index: true,
     follow: true,
@@ -37,10 +37,10 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
-  twitter: {
-    title: "VerbVibes",
-    card: "summary_large_image",
-  },
+  // twitter: {
+  //   title: "Amejro",
+  //   card: "summary_large_image",
+  // },
   icons: {
     shortcut: "/favicon.ico",
   },
@@ -56,13 +56,13 @@ export default function RootLayout({ children }) {
       <Link href={"/"} className="flex items-center">
         <Image
           className="h-7 w-7 sm:h-6"
-          src={VerbVibes}
+          src={Amejro}
           width="auto"
           height="auto"
-          alt="VerbVibes"
+          alt="Amejro"
         />
         <span className="hidden sm:block text-3xl text-[#2F1C6A] font-extrabold">
-          VerbVibes
+          Amejro
         </span>
       </Link>
       <div>
@@ -107,7 +107,7 @@ export default function RootLayout({ children }) {
           &copy; 2023
           <Image
             className="ml-2"
-            src={VerbVibes}
+            src={Amejro}
             width={20}
             height={20}
             alt="VerbVibes"
@@ -122,12 +122,9 @@ export default function RootLayout({ children }) {
       <head />
       <body className="bg-[#f6f8fc]">
         <main>
-          {/* {nav} */}
           <NavBar />
           <div className="">{children}</div>
-          {/* {authorCard} */}
           <Footer />
-          {/* {footer} */}
         </main>
       </body>
     </html>

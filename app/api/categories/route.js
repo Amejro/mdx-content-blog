@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 const { Client } = require("@notionhq/client");
-const { NOTION_TOKEN, NOTION_DB } = process.env;
+const { NOTION_TOKEN, CATEGORY_DB } = process.env;
 // Initializing a client
 const notion = new Client({
   auth: NOTION_TOKEN,
@@ -9,11 +9,11 @@ const notion = new Client({
 export async function GET(req, res) {
   NextResponse;
   const response = await notion.databases.query({
-    database_id: NOTION_DB,
+    database_id: CATEGORY_DB,
     filter: {
       property: "Status",
       select: {
-        equals: "Live",
+        equals: "Categories",
       },
     },
   });
