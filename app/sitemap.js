@@ -11,16 +11,12 @@ export default async function sitemap() {
     lastModified: post.publishedAt,
   }));
 
-  const routes = [
-    "",
-    "/about",
-    "/blog",
-    "/terms-of-service",
-    "/privacy_policy",
-  ].map((route) => ({
-    url: `${HOST_URL}/${route}`,
-    lastModified: new Date().toISOString(),
-  }));
+  const routes = ["", "/about", "/terms-of-service", "/privacy_policy"].map(
+    (route) => ({
+      url: `${HOST_URL}/${route}`,
+      lastModified: new Date().toISOString(),
+    })
+  );
 
   return [...routes, ...posts];
 }
