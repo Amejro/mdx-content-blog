@@ -1,15 +1,13 @@
+const { END_POINT, HOST_URL } = process.env;
 export default async function sitemap() {
-  // const res = await fetch('https://.../posts');
-  // const allPosts = await res.json();
-
-  const res = await fetch("http://localhost:3000/api", {
+  const res = await fetch(`${END_POINT}`, {
     next: { cache: "no-store" },
   });
   const data = await res.json();
   const allPosts = await data.response.results;
 
   const posts = allPosts.map((post) => ({
-    url: `http://localhost:3000/blog/${post.properties.slug.rich_text[0].plain_text}`,
+    url: `${HOST_URL}/blog/${post.properties.slug.rich_text[0].plain_text}`,
     lastModified: post.publishedAt,
   }));
 
@@ -20,7 +18,7 @@ export default async function sitemap() {
     "/terms-of-service",
     "/privacy_policy",
   ].map((route) => ({
-    url: `http://localhost:3000/${route}`,
+    url: `${HOST_URL}/${route}`,
     lastModified: new Date().toISOString(),
   }));
 
