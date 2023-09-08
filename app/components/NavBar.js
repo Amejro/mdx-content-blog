@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Amejro from "./logo/Amejro";
 
 async function NavBar() {
   const categoryRes = await fetch("http://localhost:3000/api/categories", {
@@ -46,7 +47,7 @@ async function NavBar() {
             </ul>
           </div>
           <Link href={"/"} className="btn btn-ghost normal-case text-xl">
-            Amejro
+            <Amejro />
           </Link>
         </nav>
         <nav className="navbar-center hidden lg:flex">
