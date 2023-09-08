@@ -1,8 +1,6 @@
 const { END_POINT, HOST_URL } = process.env;
 export default async function sitemap() {
-  const res = await fetch(`${END_POINT}`, {
-    next: { cache: "no-store" },
-  });
+  const res = await fetch(`${END_POINT}`);
   const data = await res.json();
   const allPosts = await data.response.results;
 

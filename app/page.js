@@ -1,5 +1,3 @@
-import styles from "./page.module.css";
-
 import Link from "next/link";
 import Image from "next/image";
 import ListCard from "./components/cards/ListCard";
@@ -12,32 +10,24 @@ export const metadata = {
 
 export default async function Home() {
   // ..............................All Posts.....................
-  const res = await fetch(`${END_POINT}`, {
-    next: { cache: "no-store" },
-  });
+  const res = await fetch(`${END_POINT}`);
   const data = await res.json();
   const posts = await data.response.results;
 
   // ................................Latest.....................
-  const latestRes = await fetch(`${END_POINT}/latest`, {
-    next: { cache: "no-store" },
-  });
+  const latestRes = await fetch(`${END_POINT}/latest`);
 
   const latestdata = await latestRes.json();
   const latestPost = await latestdata.response.results;
 
   //  ..................................Child..........................
-  const childRes = await fetch(`${END_POINT}/child`, {
-    next: { cache: "no-store" },
-  });
+  const childRes = await fetch(`${END_POINT}/child`);
 
   const childdata = await childRes.json();
   const childPosts = await childdata.response.results;
 
   //  ..................................OldPosts..........................
-  const oldpostsRes = await fetch(`${END_POINT}/oldposts`, {
-    next: { cache: "no-store" },
-  });
+  const oldpostsRes = await fetch(`${END_POINT}/oldposts`);
 
   const oldpostsdata = await oldpostsRes.json();
   const oldPosts = await oldpostsdata.response.results;
