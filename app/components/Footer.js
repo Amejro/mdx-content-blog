@@ -2,7 +2,8 @@ import Link from "next/link";
 import Amejro from "./logo/Amejro";
 
 async function Footer() {
-  const categoryRes = await fetch("http://localhost:3000/api/categories", {
+  const { END_POINT } = process.env;
+  const categoryRes = await fetch(`${END_POINT}`, {
     next: { cache: "no-store" },
   });
 
